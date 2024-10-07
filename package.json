@@ -1,7 +1,7 @@
 {
-  "name": "31-employee_directory",
+  "name": "32-employee_directory_v2",
   "version": "1.0.0",
-  "description": "A local organization wants to create an application that allows them to manage their employees. You are tasked with creating a proof-of-concept API using placeholder data.",
+  "description": "The organization is pleased with your work in creating the proof-of-concept employee-management API. Take your work to the next level by adding middleware and organizing your endpoints into routers!",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

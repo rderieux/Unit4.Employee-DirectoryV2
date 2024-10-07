@@ -1,20 +1,19 @@
-# Employee Directory
+# Employee Directory v2
 
-A local organization wants to create an application that allows them to manage their employees. You are tasked with creating a proof-of-concept API using placeholder data.
+The organization is pleased with your work in creating the proof-of-concept employee-management API. Take your work to the next level by adding middleware and organizing your endpoints into routers!
 
 ## Instructions
 
-`employees.js` contains the data that this API will be using.
-Complete `server.js` to serve the following endpoints:
+This repository contains the solution code to the previous workshop. You will be refactoring this existing code to meet the following requirements:
 
-- `GET /` sends the string `"Hello employees!"`
-- `GET /employees` sends the array of employees
-- `GET /employees/:id` sends the employee with the given `id`.
-  - This should 404 with a message if there is no employee with that id.
-- `GET /employees/random` sends a random employee from the array.
-  - Be very careful about where you write this middleware! A request is handled by the _first_ handler with a matching path.
+- 404 and error-handling middleware exist
+- All `/employees` routes are organized into a separate router
+- `POST /employees` will add a new employee with the provided name, if correctly provided
+  - The new employee's ID should be unique
+  - Send 400 if name is not correctly provided
+  - Update `employees.http` to test this endpoint
 
-You can test your endpoints by sending the requests in `employees.http`.
+Feel free to make new folders and files as you see fit!
 
 ## Submission
 
