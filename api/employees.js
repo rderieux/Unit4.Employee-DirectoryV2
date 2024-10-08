@@ -26,3 +26,14 @@ router.get("/:id", (req, res) => {
     res.status(404).send(`There is no employee with id ${id}.`);
   }
 });
+
+router.post("/", (req, res, next) => {
+  const { employeeName } = req.body;
+  const employeeId = employees.length + 2;
+  if (!employeeName) {
+    next({ status: 404, message: "Pleae provide a valid name." });
+  } else {
+    employees.push({ id: employeeId, name: employeeName });
+    res.status(201).json({ id: employeeId, name: employeeName });
+  }
+});
