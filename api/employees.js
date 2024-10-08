@@ -36,6 +36,6 @@ router.post("/", (req, res, next) => {
     employees.push(newEmployee);
     res.status(201).json(newEmployee);
   } else {
-    next({ status: 417, message: "Pleae provide a valid name." });
+    next({ status: 400, message: "Pleae provide a valid name." });
   }
 });
