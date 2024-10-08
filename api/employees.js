@@ -28,12 +28,14 @@ router.get("/:id", (req, res) => {
 });
 
 router.post("/", (req, res, next) => {
-  const { employeeName } = req.body;
-  const employeeId = employees.length + 2;
-  if (!employeeName) {
-    next({ status: 404, message: "Pleae provide a valid name." });
+  const { name } = req.body;
+  const employeeId = employees.length + 1;
+  const newEmployee = { id: employeeId, name: name };
+
+  if (name) {
+    employees.push(newEmployee);
+    res.status(201).json(newEmployee);
   } else {
-    employees.push({ id: employeeId, name: employeeName });
-    res.status(201).json({ id: employeeId, name: employeeName });
+    next({ status: 417, message: "Pleae provide a valid name." });
   }
 });
