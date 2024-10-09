@@ -5,10 +5,6 @@ module.exports = router;
 const employees = require("../data/employees");
 
 router.get("/", (req, res) => {
-  res.send("Hello employees!");
-});
-
-router.get("/", (req, res) => {
   res.json(employees);
 });
 

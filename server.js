@@ -4,6 +4,10 @@ const PORT = 3000;
 
 app.use(express.json());
 
+router.get("/", (req, res) => {
+  res.send("Hello employees!");
+});
+
 app.use("/employees", require("./api/employees"));
 
 app.use((req, res, next) => {
